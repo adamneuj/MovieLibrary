@@ -13,8 +13,9 @@ namespace WebAPISample.Controllers
         ApplicationDbContext context;
         public MovieController()
         {
-            context = new ApplicationDbContext;
+            context = new ApplicationDbContext();
         }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
