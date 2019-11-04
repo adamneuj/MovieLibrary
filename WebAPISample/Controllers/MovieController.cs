@@ -35,7 +35,8 @@ namespace WebAPISample.Controllers
         // POST api/values
         public void Post([FromBody]Movie value)
         {
-            // Create movie in db logic
+            context.Movies.Add(value);
+            context.SaveChanges();
         }
 
         // PUT api/values/5
@@ -47,7 +48,9 @@ namespace WebAPISample.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-            // Delete movie from db logic
+            Movie movie = context.Movies.FirstOrDefault(m => m.MovieId == id);
+            context.Movies.Remove(movie);
+            context.SaveChanges();
         }
     }
 

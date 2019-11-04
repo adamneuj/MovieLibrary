@@ -14,5 +14,6 @@ namespace WebAPISample
         {
             ConfigureAuth(app);
         }
+
     }
 }
