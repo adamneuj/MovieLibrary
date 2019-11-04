@@ -10,6 +10,12 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        ApplicationDbContext context;
+        public MovieController()
+        {
+            context = new ApplicationDbContext();
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -21,7 +27,9 @@ namespace WebAPISample.Controllers
         public string Get(int id)
         {
             // Retrieve movie by id from db logic
-            return "value";
+            var movie = context.Movies.FirstOrDefault(m => m.MovieId == id);
+            var value = movie.Title;
+            return value;
         }
 
         // POST api/values
