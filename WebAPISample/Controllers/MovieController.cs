@@ -10,6 +10,11 @@ namespace WebAPISample.Controllers
 {
     public class MovieController : ApiController
     {
+        ApplicationDbContext context;
+        public MovieController()
+        {
+            context = new ApplicationDbContext;
+        }
         // GET api/values
         public IEnumerable<string> Get()
         {
@@ -39,7 +44,9 @@ namespace WebAPISample.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-            // Delete movie from db logic
+            Movie movie = context.Movies.FirstOrDefault(m => m.MovieId == id);
+            context.Movies.Remove(movie);
+            context.SaveChanges();
         }
     }
 
