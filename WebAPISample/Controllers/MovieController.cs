@@ -26,7 +26,9 @@ namespace WebAPISample.Controllers
         public string Get(int id)
         {
             // Retrieve movie by id from db logic
-            return "value";
+            var movie = context.Movies.FirstOrDefault(v => v.MovieId == id);
+            var value = movie.Title;
+            return value;
         }
 
         // POST api/values
