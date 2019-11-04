@@ -35,16 +35,22 @@ namespace WebAPISample.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]Movie value)
+        public void Post([FromBody]Movie movie)
         {
-            context.Movies.Add(value);
+            context.Movies.Add(movie);
             context.SaveChanges();
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Movie movie)
         {
             // Update movie in db logic
+            var movies = context.Movies.FirstOrDefault(m => m.MovieId == id);
+            movies.Director = movie.Director;
+            movies.Genre = movie.Genre;
+            movies.Title = movie.Title;
+
+            context.SaveChanges();
         }
 
         // DELETE api/values/5
