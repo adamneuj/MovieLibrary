@@ -17,19 +17,21 @@ namespace WebAPISample.Controllers
         }
 
         // GET api/values
-        public IEnumerable<string> Get()
+        public IEnumerable<Movie> Get()
         {
-            // Retrieve all movies from db logic
-            return new string[] { "movie1 string", "movie2 string" };
+            return context.Movies.ToList();
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public IHttpActionResult Get(int id)
         {
             // Retrieve movie by id from db logic
-            var movie = context.Movies.FirstOrDefault(v => v.MovieId == id);
-            var value = movie.Title;
-            return value;
+            var movie = context.Movies.FirstOrDefault(m => m.MovieId == id);
+            if(movie == null)
+            {
+                return NotFound();
+            }
+            return Ok(movie);
         }
 
         // POST api/values
