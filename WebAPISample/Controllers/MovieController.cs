@@ -16,13 +16,13 @@ namespace WebAPISample.Controllers
             context = new ApplicationDbContext();
         }
 
-        // GET api/values
+        // GET api/movie
         public IEnumerable<Movie> Get()
         {
             return context.Movies.ToList();
         }
 
-        // GET api/values/5
+        // GET api/movie/1
         public IHttpActionResult Get(int id)
         {
             // Retrieve movie by id from db logic
