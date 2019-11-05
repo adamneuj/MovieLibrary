@@ -1,3 +1,18 @@
+// $.ajax({
+//             url: 'https://localhost:44352/api/movie',
+//             dataType: 'json',
+//             type: 'get',
+//             contentType: 'application/json',
+//             data: JSON.stringify(dict),
+//             success: function(data, textStatus, jQxhr){
+//                 $('#response pre').html(data);
+//             },
+//             error: function(jqXhr,textStatus, errorThrown){
+//                 console.log(errorThrown);
+//             }
+//         });
+// $.getmovies;
+
 (function($){
     function processForm( e ){
         var dict = {
@@ -25,4 +40,33 @@
 
     $('#my-form').submit( processForm );
 })(jQuery);
+
+
+
+    function getAllMovies(){
+        $.ajax({
+            url: 'https://localhost:44352/api/movie',
+            dataType: 'json',
+            type: 'get',
+            contentType: 'application/json',
+            success: function( data, textStatus, jQxhr ){
+                // $.each(movies, function(i, data){
+                //     $('#movies').append('<tr> <td>' + data.title +' </td> <td>' + data.genre +'</td> <td> ' + data.director + ' </td> </tr>');
+                //     // $('#movies').append('<tr><td>title</td><td>director</td><td>genre</td></tr>');
+                // });
+                console.log(data);
+                for(let i = 0; i < data.length; i++){
+                    $('#movies').append('<tr> <td>' + data[i].Title +' </td> <td>' + data[i].Genre +'</td> <td> ' + data[i].Director + ' </td> </tr>');
+                }
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( errorThrown );
+            }
+        });
+
+        }
+
+    $('#getmovies').submit( getAllMovies );
+
+
 
