@@ -25,3 +25,25 @@
 
     $('#my-form').submit( processForm );
 })(jQuery);
+
+(function($){
+   function processForm( e ){
+       $.ajax({
+           url: 'https://localhost:44352/api/movie',
+           dataType: 'json',
+           type: 'get',
+           contentType: 'application/json',
+           success: function( data, textStatus, jQxhr ){
+                for(let i = 0; i < data.Length; i++){
+                    console.log(data[i].MovieId)
+                }
+               });
+           },
+           error: function( jqXhr, textStatus, errorThrown ){
+               console.log( errorThrown );
+           }
+       };
+       e.preventDefault();
+   }
+   $('#getmovies').submit( processForm );
+})(jQuery);
