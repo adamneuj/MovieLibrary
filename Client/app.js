@@ -61,3 +61,16 @@ function getAllMovies(){
     }
 $(document).ready(getAllMovies);
 // $('#getmovies').submit( getAllMovies );
+
+function updateMovie(){
+
+    $.ajax({
+        url: 'https://localhost:44352/api/movie' + $li.attr('data-id'),
+        dataType: 'json',
+        type: 'put',
+        contentType: 'application/json',
+        success: function(data){
+            getAllMovies();
+        }
+    });
+}
