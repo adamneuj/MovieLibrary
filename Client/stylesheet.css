@@ -193,11 +193,23 @@ table {
 td,
 th {
   font-family: 'Oswald', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 0;
 }
 th{
+  align-content: center;
+  text-align: center;
   background-color: darkgrey;
+  color: black;
+}
+h2{
+  background-color: black;
+}
+p{
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  background-color: white;
+  color: black;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
