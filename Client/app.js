@@ -50,7 +50,7 @@ function getAllMovies(){
         success: function( data, textStatus, jQxhr ){
             console.log(data);
             for(let i = 0; i < data.length; i++){
-                $('#movies').append('<tr> <td>' + data[i].Title +' </td> <td>' + data[i].Genre +'</td> <td> ' + data[i].Director + ' </td> </tr>');
+                $('#movies').append('<tr> <td>' + data[i].Title +' </td> <td>' + data[i].Genre +'</td> <td> ' + data[i].Director +   ' </td> </tr>');
             }
         },
         error: function( jqXhr, textStatus, errorThrown ){
@@ -61,3 +61,16 @@ function getAllMovies(){
     }
 $(document).ready(getAllMovies);
 // $('#getmovies').submit( getAllMovies );
+
+function updateMovie(){
+
+    $.ajax({
+        url: 'https://localhost:44352/api/movie' + $li.attr('data-id'),
+        dataType: 'json',
+        type: 'put',
+        contentType: 'application/json',
+        success: function(data){
+            getAllMovies();
+        }
+    });
+}
