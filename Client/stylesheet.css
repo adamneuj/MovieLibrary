@@ -211,6 +211,10 @@ p{
   background-color: white;
   color: black;
 }
+table, th, td{
+  border: 1px solid black;
+  text-align: center;
+}
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
   *,

@@ -49,7 +49,6 @@ namespace WebAPISample.Controllers
             movies.Director = movie.Director;
             movies.Genre = movie.Genre;
             movies.Title = movie.Title;
-
             context.SaveChanges();
         }
 
