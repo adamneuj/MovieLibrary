@@ -50,7 +50,7 @@ function getAllMovies(){
         success: function( data, textStatus, jQxhr ){
             console.log(data);
             for(let i = 0; i < data.length; i++){
-                $('#movies').append('<tr> <td>' + data[i].Title +' </td> <td>' + data[i].Genre +'</td> <td> ' + data[i].Director + ' </td> </tr>');
+                $('#movies').append('<tr> <td>' + data[i].Title +' </td> <td>' + data[i].Genre +'</td> <td> ' + data[i].Director + ' </td> <td> <button onClick="updateMovie(' + data[i].MovieId + ')"> Update </button> </td> </tr>');
             }
         },
         error: function( jqXhr, textStatus, errorThrown ){
