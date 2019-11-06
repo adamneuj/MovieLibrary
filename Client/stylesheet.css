@@ -13,11 +13,12 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  -font-family: 'Oswald', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
+  font-family: 'Oswald', sans-serif;
   margin: 0;
   background-image: url("movie4.jpg");
 }
@@ -185,11 +186,13 @@ optgroup {
   font-weight: bold;
 }
 table {
+  font-family: 'Oswald', sans-serif;
   border-collapse: collapse;
   border-spacing: 0;
 }
 td,
 th {
+  font-family: 'Oswald', sans-serif;
   padding: 0;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
@@ -1262,6 +1265,7 @@ h1,
 }
 h2,
 .h2 {
+  font-family: 'Oswald', sans-serif;
   font-size: 45px;
 }
 h3,
