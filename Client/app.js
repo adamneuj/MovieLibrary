@@ -59,5 +59,5 @@ function getAllMovies(){
     });
 
     }
-
-$('#getmovies').submit( getAllMovies );
+$(document).ready(getAllMovies);
+// $('#getmovies').submit( getAllMovies );
