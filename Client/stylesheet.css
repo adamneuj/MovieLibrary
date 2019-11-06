@@ -193,7 +193,11 @@ table {
 td,
 th {
   font-family: 'Oswald', sans-serif;
+  font-size: 16px;
   padding: 0;
+}
+th{
+  background-color: darkgrey;
 }
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
